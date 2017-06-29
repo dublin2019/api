@@ -1,8 +1,9 @@
 [![DockerPulls](https://img.shields.io/docker/stars/worldcon75/api.svg)](https://hub.docker.com/r/worldcon75/api/)
 [![Build Status](https://travis-ci.org/worldcon75/api.svg?branch=master)](https://travis-ci.org/worldcon75/api)
-# Worldcon 75 Member Services API
+# Dublin2019 Worldcon Member Services API
 
-These are the back-end services used by [members.worldcon.fi](https://members.worldcon.fi/):
+This project was forked from the Worldcon75 code at https://github.com/worldcon75/api
+These are the back-end services used by the Dublin 2019 Worldcon Bid:
 
 - **`docker-compose.*`** - Service configuration
 - **`hugo`** - An express.js app providing the Hugo Nominations and Awards parts of the [REST API](docs/index.md)
@@ -19,7 +20,7 @@ the name for our member registry. The [Hugo Awards](http://www.thehugoawards.org
 are nominated and selected by the members of each year's Worldcon. Kyyhky is Finnish for "pigeon",
 Raami is "frame", and Tuohi is the bark of a birch tree.
 
-For the front-end code, please see [worldcon75/client](https://github.com/worldcon75/client).
+For the front-end code, please see [dublin2019/client](https://github.com/dublin2019/client).
 
 
 ### Getting Started
@@ -98,4 +99,4 @@ The particular places that may need manual adjustment are:
 ----
 
 If you'd like to help with this project, please get in touch with us at
-[devops@worldcon.fi](mailto:devops@worldcon.fi).
+[it-infrastructure@dublin2019.com](mailto:it-infrastructure@dublin2019.com).
