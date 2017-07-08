@@ -1,4 +1,4 @@
-SET ROLE kansa;
+SET ROLE members;
 
 CREATE TABLE daypass_amounts (
     status MembershipStatus PRIMARY KEY,

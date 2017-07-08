@@ -1,5 +1,5 @@
 const debug = require('debug')
-const debugErrors = debug('kansa:errors')
+const debugErrors = debug('members:errors')
 
 const cors = require('cors');
 const csv = require('csv-express');
@@ -11,7 +11,7 @@ const session = require('express-session');
 const pgSession = require('connect-pg-simple')(session);
 const pgOptions = { promiseLib: require('bluebird') };
 const pgp = require('pg-promise')(pgOptions);
-if (debug.enabled('kansa:db')) {
+if (debug.enabled('members:db')) {
   const pgMonitor = require('pg-monitor');
   pgMonitor.attach(pgOptions);
 }
@@ -90,7 +90,7 @@ router.post('/admin/set-keys', key.setAllKeys);
 router.post('/admin/set-recipients', setAllMailRecipients);
 
 app.locals.db = db;
-if (debug.enabled('kansa:http')) {
+if (debug.enabled('members:http')) {
   const logger = require('morgan');
   app.use(logger('dev'));
 }

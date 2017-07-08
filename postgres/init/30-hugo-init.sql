@@ -2,8 +2,8 @@
 
 CREATE USER hugo WITH PASSWORD :'hugoPwd' IN ROLE api_access;
 CREATE SCHEMA AUTHORIZATION hugo;
-GRANT USAGE ON SCHEMA kansa TO hugo;
-GRANT SELECT, REFERENCES ON ALL TABLES IN SCHEMA kansa TO hugo;
+GRANT USAGE ON SCHEMA members TO hugo;
+GRANT SELECT, REFERENCES ON ALL TABLES IN SCHEMA members TO hugo;
 SET ROLE hugo;
 
 CREATE TYPE Category AS ENUM ('Novel', 'Novella', 'Novelette', 'ShortStory', 'RelatedWork',
@@ -15,7 +15,7 @@ CREATE TABLE Nominations (
     time timestamptz DEFAULT now(),
     client_ip text NOT NULL,
     client_ua text,
-    person_id integer REFERENCES kansa.People NOT NULL,
+    person_id integer REFERENCES members.People NOT NULL,
     signature text NOT NULL,
     category Category NOT NULL,
     nominations jsonb[] NOT NULL
@@ -34,7 +34,7 @@ CREATE TABLE Votes (
     time timestamptz DEFAULT now(),
     client_ip text NOT NULL,
     client_ua text,
-    person_id integer REFERENCES kansa.People NOT NULL,
+    person_id integer REFERENCES members.People NOT NULL,
     signature text NOT NULL,
     category Category NOT NULL,
     votes integer[] NOT NULL

@@ -6,12 +6,12 @@ class Admin {
       'member_list',  // bool NOT NULL DEFAULT false
       'hugo_admin',  // bool NOT NULL DEFAULT false
       'admin_admin',  // bool NOT NULL DEFAULT false
-      'raami_admin'  // bool NOT NULL DEFAULT false
+      'art_admin'  // bool NOT NULL DEFAULT false
     ];
   }
 
   static get roleFields() {
-    return [ 'member_admin', 'member_list', 'hugo_admin', 'admin_admin', 'raami_admin' ];
+    return [ 'member_admin', 'member_list', 'hugo_admin', 'admin_admin', 'art_admin' ];
   }
 
   static get sqlRoles() {
@@ -30,7 +30,7 @@ class Admin {
     this.member_list = false;
     this.hugo_admin = false;
     this.admin_admin = false;
-    this.raami_admin = false;
+    this.art_admin = false;
   }
 }
 

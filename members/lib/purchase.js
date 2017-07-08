@@ -107,7 +107,7 @@ class Purchase {
             console.log('Updated payment', item.id, 'status to', status);
             const { shape, types } = purchaseData[item.category];
             const typeData = types.find(td => td.key === item.type);
-            return mailTask('kansa-update-payment', Object.assign({
+            return mailTask('members-update-payment', Object.assign({
               email: item.person_email || item.payment_email,
               name: item.person_name || null,
               shape,
@@ -204,7 +204,7 @@ class Purchase {
             .then(({ key, set }) => {
               if (set) newEmailAddresses[p.data.email] = true
               return mailTask(
-                'kansa-new-daypass',
+                'members-new-daypass',
                 Object.assign({ charge_id, key, name: p.preferredName }, p.data)
               )
             })
@@ -267,7 +267,7 @@ class Purchase {
           })
           .then(({ key }) => mailTask(
             ((!u.membership || u.membership === u.prev_membership) && u.paper_pubs)
-              ? 'kansa-add-paper-pubs' : 'kansa-upgrade-person',
+              ? 'members-add-paper-pubs' : 'members-upgrade-person',
             Object.assign({ charge_id, key }, u)
           ))
       )));
@@ -284,7 +284,7 @@ class Purchase {
           .then(({ key, set }) => {
             if (set) newEmailAddresses[m.data.email] = true;
             return mailTask(
-              'kansa-new-member',
+              'members-new-member',
               Object.assign({ charge_id, key, name: m.preferredName }, m.data)
             );
           })
@@ -306,7 +306,7 @@ class Purchase {
         Promise.all(items.map(item => {
           const { shape, types } = purchaseData[item.category];
           const typeData = types.find(td => td.key === item.type);
-          return mailTask('kansa-new-payment', Object.assign({
+          return mailTask('members-new-payment', Object.assign({
             email: item.person_email || item.payment_email,
             name: item.person_name || null,
             mandate_url: source.sepa_debit && source.sepa_debit.mandate_url || null,
@@ -332,7 +332,7 @@ class Purchase {
         if (items.some(item => !item.id || item.status !== 'invoice')) {
           throw new Error('Bad item: ' + JSON.stringify(item))
         }
-        return mailTask('kansa-new-invoice', { email, items })
+        return mailTask('members-new-invoice', { email, items })
       })
       .then(() => res.json({ status: 'success', email }))
       .catch(next)

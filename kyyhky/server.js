@@ -82,14 +82,14 @@ queue.on('job failed', (id, result) => {
 
 [
   'hugo-update-email',
-  'kansa-add-paper-pubs',
-  'kansa-create-account',
-  'kansa-new-daypass',
-  'kansa-new-member',
-  'kansa-new-payment',
-  'kansa-set-key',
-  'kansa-update-payment',
-  'kansa-upgrade-person'
+  'members-add-paper-pubs',
+  'members-create-account',
+  'members-new-daypass',
+  'members-new-member',
+  'members-new-payment',
+  'members-set-key',
+  'members-update-payment',
+  'members-upgrade-person'
 ].forEach(type => (
   queue.process(type, (job, done) => {
     mailer.sendEmail(job.type, job.data, done);

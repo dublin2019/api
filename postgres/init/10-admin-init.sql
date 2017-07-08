@@ -5,7 +5,7 @@ CREATE SCHEMA AUTHORIZATION admin
         member_list bool NOT NULL DEFAULT false,
         hugo_admin bool NOT NULL DEFAULT false,
         admin_admin bool NOT NULL DEFAULT false,
-        raami_admin bool NOT NULL DEFAULT false
+        art_admin bool NOT NULL DEFAULT false
     );
 
 

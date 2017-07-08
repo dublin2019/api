@@ -1,11 +1,11 @@
-\set kansaPwd `echo "$KANSA_PG_PASSWORD"`
+\set membersPwd `echo "$KANSA_PG_PASSWORD"`
 
 CREATE EXTENSION damm WITH SCHEMA public;
 
-CREATE USER kansa WITH PASSWORD :'kansaPwd' IN ROLE api_access;
-CREATE SCHEMA AUTHORIZATION kansa;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO kansa;
-SET ROLE kansa;
+CREATE USER members WITH PASSWORD :'membersPwd' IN ROLE api_access;
+CREATE SCHEMA AUTHORIZATION members;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO members;
+SET ROLE members;
 
 CREATE SEQUENCE member_number_seq;
 CREATE TYPE MembershipStatus AS ENUM (

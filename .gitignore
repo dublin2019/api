@@ -13,6 +13,8 @@ node_modules/
 fixtures/postgres/*
 fixtures/redis/*
 fixtures/ssl/*
+nginx/ssl/*
+docker-compose.prod.yml
 
 *.class
 *.tgz

@@ -22,11 +22,11 @@ services:
       JWT_SECRET: dev secret
       SESSION_SECRET: dev secret
 
-  kansa:
+  members:
     environment:
       CORS_ORIGIN: http://localhost:8080
-      DATABASE_URL: postgres://kansa:pwd@postgres:5432/api
-      DEBUG: kansa:*
+      DATABASE_URL: postgres://members:pwd@postgres:5432/api
+      DEBUG: members:*
       SESSION_SECRET: dev secret
       SLACK_ORG: worldcon75
       SLACK_REQ_MEMBER: 'true'
@@ -34,10 +34,10 @@ services:
       STRIPE_SECRET_APIKEY: sk_test_zq022Drx7npYPVEtXAVMaOJT
       STRIPE_SECRET_APIKEY_worldcon77: sk_test_35SiP34s6qovtenwPPLguIyY
 
-  raami:
+  art:
     environment:
       CORS_ORIGIN: http://localhost:8080
-      DATABASE_URL: postgres://raami:pwd@postgres:5432/api
+      DATABASE_URL: postgres://art:pwd@postgres:5432/api
       SESSION_SECRET: dev secret
 
   tuohi:

@@ -5,7 +5,7 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('raami:server');
+var debug = require('debug')('art:server');
 var http = require('http');
 
 /**

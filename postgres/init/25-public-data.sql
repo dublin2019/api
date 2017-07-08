@@ -1,6 +1,6 @@
 CREATE EXTENSION tablefunc WITH SCHEMA public;
 
-SET ROLE kansa;
+SET ROLE members;
 
 CREATE TABLE IF NOT EXISTS countries (
     entry text PRIMARY KEY,

@@ -31,7 +31,7 @@ function login(req, res, next) {
   const db = req.app.locals.db;
   db.one(`
     SELECT ${Admin.sqlRoles}
-      FROM kansa.Keys LEFT JOIN admin.Admins USING (email)
+      FROM members.Keys LEFT JOIN admin.Admins USING (email)
      WHERE email=$(email) AND key=$(key)`, { email, key }
   ).then(roles => {
     req.session.user = Object.assign({ email }, roles);

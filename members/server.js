@@ -1,4 +1,4 @@
-const debug = require('debug')('kansa:server')
+const debug = require('debug')('members:server')
 const { app, server } = require('./app')
 
 // Normalize the port into a number, string, or false.

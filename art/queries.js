@@ -17,9 +17,9 @@ function access(req) {
   const id = parseInt(req.params.id);
   if (isNaN(id) || id < 0) return Promise.reject(new InputError('Bad id number'));
   if (!req.session || !req.session.user || !req.session.user.email) return Promise.reject(new AuthError());
-  return req.app.locals.db.oneOrNone('SELECT email FROM kansa.People WHERE id = $1', id)
+  return req.app.locals.db.oneOrNone('SELECT email FROM members.People WHERE id = $1', id)
     .then(data => {
-      if (!data || !req.session.user.raami_admin && req.session.user.email !== data.email) throw new AuthError();
+      if (!data || !req.session.user.art_admin && req.session.user.email !== data.email) throw new AuthError();
       return {
         id,
       };
@@ -129,13 +129,13 @@ function removeWork(req, res, next) {
 /**** export CSV ****/
 
 function exportArtists(req, res, next) {
-     if (!req.session.user.raami_admin) return res.status(401).json({ status: 'unauthorized' });
+     if (!req.session.user.art_admin) return res.status(401).json({ status: 'unauthorized' });
     req.app.locals.db.any(`
     SELECT p.member_number, p.membership, p.legal_name, p.email, p.city, p.country,
         a.name, a.continent, a.url,
         a.category, a.description, a.transport, a.auction, a.print, a.digital, a.half,
         a.legal, a.agent, a.contact, a.waitlist, a.postage 
-        FROM Artist as a, kansa.people as p WHERE a.people_id = p.ID order by p.member_number
+        FROM Artist as a, members.people as p WHERE a.people_id = p.ID order by p.member_number
     `)
     .then((data) => res.status(200).csv(data, true))
     .catch(next)

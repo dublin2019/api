@@ -25,7 +25,7 @@ class Vote {
     if (!req.session || !req.session.user || !req.session.user.email) return Promise.reject(new AuthError());
     return this.db.oneOrNone(`
       SELECT email, can_hugo_vote
-        FROM kansa.People
+        FROM members.People
        WHERE id = $1`, id
     )
       .then(data => {
@@ -102,9 +102,9 @@ class Vote {
   sendVoteEmail(id) {
     this.db.task(t => t.batch([
       t.one(`
-        SELECT k.email, k.key, kansa.preferred_name(p) as name
-          FROM kansa.People AS p
-          JOIN kansa.Keys AS k USING (email)
+        SELECT k.email, k.key, members.preferred_name(p) as name
+          FROM members.People AS p
+          JOIN members.Keys AS k USING (email)
          WHERE id = $1`, id),
       t.any(`
         SELECT category,

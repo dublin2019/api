@@ -44,7 +44,7 @@ function setKey(req, res, next) {
         : getKeyChecked(req, ts, data[0].email))
       .then(({ email, key, set }) => {
         res.json({ status: 'success', email })
-        mailTask('kansa-set-key', { email, key, path, set })
+        mailTask('members-set-key', { email, key, path, set })
       })
       .catch(error => {
         if (!isNoDataError(error)) return next(error);
@@ -52,7 +52,7 @@ function setKey(req, res, next) {
           'Email address ' + JSON.stringify(email) + ' not found'
         ));
         setKeyChecked(req, ts, email, name)
-          .then(({ email, key }) => mailTask('kansa-create-account', { email, key, name, path }))
+          .then(({ email, key }) => mailTask('members-create-account', { email, key, name, path }))
           .then(() => res.json({ status: 'success', email }))
           .catch(next)
       })

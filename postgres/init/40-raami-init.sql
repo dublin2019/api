@@ -1,15 +1,15 @@
-\set raamiPwd `echo "$RAAMI_PG_PASSWORD"`
+\set artPwd `echo "$RAAMI_PG_PASSWORD"`
 
-CREATE USER raami WITH PASSWORD :'raamiPwd' IN ROLE api_access;
-CREATE SCHEMA AUTHORIZATION raami;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO raami;
-GRANT USAGE ON SCHEMA kansa TO raami;
-GRANT SELECT, REFERENCES ON ALL TABLES IN SCHEMA kansa TO raami;
-SET ROLE raami;
+CREATE USER art WITH PASSWORD :'artPwd' IN ROLE api_access;
+CREATE SCHEMA AUTHORIZATION art;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO art;
+GRANT USAGE ON SCHEMA members TO art;
+GRANT SELECT, REFERENCES ON ALL TABLES IN SCHEMA members TO art;
+SET ROLE art;
 
 CREATE TABLE IF NOT EXISTS Artist (
     -- id SERIAL PRIMARY KEY,
-    people_id integer REFERENCES kansa.People PRIMARY KEY,
+    people_id integer REFERENCES members.People PRIMARY KEY,
     name text,
     continent text,
     url text,

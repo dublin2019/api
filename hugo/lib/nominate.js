@@ -11,7 +11,7 @@ function access(req) {
   const id = parseInt(req.params.id);
   if (isNaN(id) || id < 0) return Promise.reject(new InputError('Bad id number'));
   if (!req.session || !req.session.user || !req.session.user.email) return Promise.reject(new AuthError());
-  return req.app.locals.db.oneOrNone('SELECT email, can_hugo_nominate, can_hugo_vote FROM kansa.People WHERE id = $1', id)
+  return req.app.locals.db.oneOrNone('SELECT email, can_hugo_nominate, can_hugo_vote FROM members.People WHERE id = $1', id)
     .then(data => {
       if (!data || !req.session.user.hugo_admin && req.session.user.email !== data.email) throw new AuthError();
       return {
@@ -36,8 +36,8 @@ function sendNominationEmail(db, id) {
   db.task(t => t.batch([
     t.one(`SELECT
       k.email, k.key, p.legal_name, p.public_first_name AS pfn, p.public_last_name AS pln
-      FROM kansa.People AS p
-      JOIN kansa.Keys AS k USING (email)
+      FROM members.People AS p
+      JOIN members.Keys AS k USING (email)
       WHERE id = $1`, id),
     t.any(`SELECT DISTINCT ON (category) * FROM Nominations
       WHERE person_id = $1 ORDER BY category, time DESC`, id)

@@ -84,16 +84,16 @@ class Mailer {
         tmplData.votes = votesString(data.votes);
         break;
 
-      case 'kansa-new-payment':
-      case 'kansa-update-payment':
+      case 'members-new-payment':
+      case 'members-update-payment':
         if (data.type === 'ss-token' && data.status === 'succeeded') {
-          tmplName = 'kansa-new-siteselection-token';
+          tmplName = 'members-new-siteselection-token';
         }
         tmplData.data = paymentDataString(data.data, data.shape, { mandate_url: true });
         tmplData.strAmount = data.currency.toUpperCase() + ' ' + (data.amount / 100).toFixed(2);
         break;
 
-      case 'kansa-upgrade-person':
+      case 'members-upgrade-person':
         if (data.paper_pubs) tmplData.membership += ' with paper pubs';
         break;
 
