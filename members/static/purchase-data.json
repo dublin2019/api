@@ -134,27 +134,27 @@
     "types": [
       {
         "key": "Adult",
-        "amount": 19500,
+        "amount": 16000,
         "label": "Adult"
       }, {
         "key": "FirstWorldcon",
-        "amount": 9500,
+        "amount": 16000,
         "label": "First Worldcon"
       }, {
         "key": "Youth",
-        "amount": 11000,
+        "amount": 10000,
         "label": "Youth"
       }, {
         "key": "Child",
-        "amount": 7500,
+        "amount": 6000,
         "label": "Child"
       }, {
         "key": "KidInTow",
-        "amount": 0,
+        "amount": 500,
         "label": "Kid-in-tow"
       }, {
         "key": "Supporter",
-        "amount": 3500,
+        "amount": 4000,
         "label": "Supporting"
       }
     ],

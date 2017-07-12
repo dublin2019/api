@@ -19,31 +19,31 @@
   },
   "memberships": {
     "Exhibitor": {
-      "amount": 2000,
+      "amount": 16000,
       "description": "Trader/Displayer"
     },
     "Supporter": {
-      "amount": 3500,
+      "amount": 4000,
       "description": "Supporting"
     },
     "KidInTow": {
-      "amount": 0,
+      "amount": 500,
       "description": "Kid-in-tow"
     },
     "Child": {
-      "amount": 7500,
+      "amount": 6000,
       "description": "Child"
     },
     "Youth": {
-      "amount": 11000,
+      "amount": 10000,
       "description": "Youth"
     },
     "FirstWorldcon": {
-      "amount": 9500,
+      "amount": 16000,
       "description": "First Worldcon"
     },
     "Adult": {
-      "amount": 19500,
+      "amount": 16000,
       "description": "Adult"
     }
   },
