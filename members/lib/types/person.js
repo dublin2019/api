@@ -23,7 +23,7 @@ class Person {
   }
 
   static hugoVoterType(membership) {
-    return [ 'Supporter', 'Youth', 'FirstWorldcon', 'Adult' ].indexOf(membership) !== -1
+    return [ 'Supporter', 'YoungAdult', 'FirstWorldcon', 'Adult' ].indexOf(membership) !== -1
   }
 
   static get userModFields() {
@@ -31,7 +31,7 @@ class Person {
   }
 
   static get membershipTypes() {
-    return [ 'NonMember', 'Exhibitor', 'Supporter', 'KidInTow', 'Child', 'Youth', 'FirstWorldcon', 'Adult' ];
+    return [ 'NonMember', 'Exhibitor', 'Supporter', 'Voter', 'Backer', 'Friend', 'Infant', 'Child', 'YoungAdult', 'FirstWorldcon', 'Adult' ];
   }
 
   static get paperPubsFields() {

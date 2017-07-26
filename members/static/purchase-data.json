@@ -1,8 +1,8 @@
 {
-  "Advance Supporting Membership Fee for the 2019 Worldcon": {
-    "account": "worldcon77",
+  "Advance Supporting Membership Fee for the 2021 Worldcon": {
+    "account": "worldcon79",
     "allowCreate": false,
-    "description": "<p>You (or someone else you pay for) will receive a <b>voting token</b> to be entered on the site selection ballot as proof of payment, which will allow you to submit a vote for where the 77th Worldcon will be held in 2019. You can vote in advance by postal mail or in person at Worldcon 75. Your ballot will NOT be counted unless you provide this proof of payment of the Advance Supporting Membership Fee for the 2019 Worldcon. You will receive your voting token via email.</p><p><b>Worldcon Site Selection Ballot</b>: <a href=\"http://www.worldcon.fi/wsfs/site-selection/\" target=\"_blank\">Click here</a> to find a printable copy of the Worldcon Site Selection ballot to download.</p>",
+    "description": "<p>You (or someone else you pay for) will receive a <b>voting token</b> to be entered on the site selection ballot as proof of payment, which will allow you to submit a vote for where the 79th Worldcon will be held in 2021. You can vote in advance by postal mail or in person at Worldcon 77. Your ballot will NOT be counted unless you provide this proof of payment of the Advance Supporting Membership Fee for the 2021 Worldcon. You will receive your voting token via email.</p><p><b>Worldcon Site Selection Ballot</b>: <a href=\"http://www.worldcon.ie/wsfs/site-selection/\" target=\"_blank\">Click here</a> to find a printable copy of the Worldcon Site Selection ballot to download.</p>",
     "disabled": ["invoice", "comments"],
     "shape": {
       "token": {
@@ -19,7 +19,7 @@
     }]
   },
   "Day pass": {
-    "allowCreate": true,
+    "allowCreate": false,
     "allow_new_email": true,
     "shape": {
       "day1": {
@@ -78,8 +78,8 @@
         "key": "daypass-Adult",
         "label": "Adult (from €25/day)"
       }, {
-        "key": "daypass-Youth",
-        "label": "Youth (from €15/day)"
+        "key": "daypass-YoungAdult",
+        "label": "YoungAdult (from €15/day)"
       }, {
         "key": "daypass-Child",
         "label": "Child (from €10/day)"
@@ -138,20 +138,32 @@
         "label": "Adult"
       }, {
         "key": "FirstWorldcon",
-        "amount": 16000,
+        "amount": 10000,
         "label": "First Worldcon"
       }, {
-        "key": "Youth",
+        "key": "YoungAdult",
         "amount": 10000,
-        "label": "Youth"
+        "label": "Young Adult"
       }, {
         "key": "Child",
         "amount": 6000,
         "label": "Child"
       }, {
-        "key": "KidInTow",
+        "key": "Infant",
         "amount": 500,
-        "label": "Kid-in-tow"
+        "label": "Infant"
+      }, {
+        "key": "Backer",
+        "amount": 500,
+        "label": "Pre-Supporter or Backer"
+      }, {
+        "key": "Friend",
+        "amount": 12000,
+        "label": "Friend or SuperFriend"
+      }, {
+        "key": "Voter",
+        "amount": 4000,
+        "label": "Site Selection Voter"
       }, {
         "key": "Supporter",
         "amount": 4000,
@@ -274,7 +286,7 @@
     "unlisted": true
   },
   "Sponsorship": {
-    "allowCreate": true,
+    "allowCreate": false,
     "description": "The problem with travelling is the waiting. The long wait for a space elevator capsule or dragon caravan (or for that programme item you really want to see) can get quite dull. Why not sponsor a craft lounge to help con-goers pass the time? Or sponsor a bench, and give weary convention members somewhere to put their feet up when they've spent too long wandering around the halls.",
     "shape": {
       "sponsor": {

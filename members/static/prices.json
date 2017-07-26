@@ -39,12 +39,32 @@
       "description": "Youth"
     },
     "FirstWorldcon": {
-      "amount": 16000,
+      "amount": 10000,
       "description": "First Worldcon"
     },
     "Adult": {
       "amount": 16000,
       "description": "Adult"
+    },
+    "Backer": {
+      "amount": 500,
+      "description": "Pre-supporter / Backer"
+    },
+    "Friend": {
+      "amount": 12000,
+      "description": "Friend / Super-Friend"
+    },
+    "Voter": {
+      "amount": 4000,
+      "description": "2019 Site Selection Voter"
+    },
+    "BackerVoter": {
+      "amount": 4000,
+      "description": "Pre-supporter / Backer who voted for 2019 Site Selection"
+    },
+    "FriendVoter": {
+      "amount": 16000,
+      "description": "Friend / Super-Friend who voted for 2019 Site Selection"
     }
   },
   "PaperPubs": {

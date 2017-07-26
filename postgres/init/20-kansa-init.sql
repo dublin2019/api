@@ -9,8 +9,8 @@ SET ROLE members;
 
 CREATE SEQUENCE member_number_seq;
 CREATE TYPE MembershipStatus AS ENUM (
-    'NonMember', 'Exhibitor', 'Supporter', 'KidInTow',
-    'Child', 'Youth', 'FirstWorldcon', 'Adult'
+    'NonMember', 'Exhibitor', 'Supporter', 'Voter', 'Backer', 'Friend', 'Infant',
+    'Child', 'YoungAdult', 'FirstWorldcon', 'Adult'
 );
 
 CREATE TABLE IF NOT EXISTS People (

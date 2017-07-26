@@ -35,7 +35,7 @@ if (corsOrigins) app.use(cors({
 }));
 app.use(session({
   cookie: { maxAge: 30 * 24 * 60 * 60 * 1000 },  // 30 days
-  name: 'w75',
+  name: 'w77',
   resave: false,
   saveUninitialized: false,
   secret: process.env.SESSION_SECRET,
