@@ -5,7 +5,7 @@ const ballotData = ({ member_number, legal_name, email, city, state, country, ba
   return {
     info: {
       Title: 'Ballot for ' + legal_name,
-      Author: 'Worldcon 77 Site Selection',
+      Author: 'Dublin 2019 - An Irish Worldcon - Site Selection',
       Creator: 'members.worldcon.fi'
     },
     fields: {
