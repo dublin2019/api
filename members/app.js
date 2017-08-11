@@ -58,7 +58,7 @@ router.get('/purchase/keys', purchase.getStripeKeys);
 router.get('/purchase/list', purchase.getPurchases);
 router.post('/purchase/other', purchase.makeOtherPurchase);
 router.get('/purchase/prices', purchase.getPrices);
-router.post('/webhook/stripe', purchase.handleStripeWebhook)
+router.post('/webhook/stripe', purchase.handleStripeWebhook);
 
 // subsequent routes require authentication
 router.use(user.authenticate);
@@ -132,7 +132,7 @@ app.use((req, res, next) => {
 const isDevEnv = (app.get('env') === 'development');
 app.use((err, req, res, next) => {
   const error = err.error || err;
-  debugErrors(error instanceof Error ? error.message : err)
+  debugErrors(error instanceof Error ? error.message : err);
   const data = { status: 'error', message: error.message };
   if (isDevEnv) data.error = err;
   const status = err.status || error.status || error.name == 'InputError' && 400 || 500;

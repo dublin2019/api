@@ -1,12 +1,12 @@
 const { setKeyChecked } = require('./key');
 const { AuthError, InputError } = require('./errors');
-const { mailTask, updateMailRecipient } = require('./mail')
+const { mailTask, updateMailRecipient } = require('./mail');
 const LogEntry = require('./types/logentry');
 const Person = require('./types/person');
 
 const selectAllPeopleData = `
   SELECT p.*, preferred_name(p), d.status AS daypass, daypass_days(d)
-    FROM people p LEFT JOIN daypasses d ON (p.id = d.person_id)`
+    FROM people p LEFT JOIN daypasses d ON (p.id = d.person_id)`;
 
 module.exports = {
   selectAllPeopleData,
@@ -116,11 +116,11 @@ function getPerson(req, res, next) {
 }
 
 function addPerson(req, db, person) {
-  const passDays = person.passDays
-  const status = person.data.membership
+  const passDays = person.passDays;
+  const status = person.data.membership;
   if (passDays.length) {
-    person.data.membership = 'NonMember'
-    person.data.member_number = null
+    person.data.membership = 'NonMember';
+    person.data.member_number = null;
   }
   const log = new LogEntry(req, 'Add new person');
   let res;
@@ -131,20 +131,20 @@ function addPerson(req, db, person) {
       return tx.one(`INSERT INTO People ${person.sqlValues} RETURNING id, member_number`, person.data);
 
     case 1:
-      person.data.id = data.id
-      person.data.member_number = data.member_number
+      person.data.id = data.id;
+      person.data.member_number = data.member_number;
       res = data;
-      log.subject = data.id
-      return tx.none(`INSERT INTO Log ${log.sqlValues}`, log)
+      log.subject = data.id;
+      return tx.none(`INSERT INTO Log ${log.sqlValues}`, log);
 
     case 2:
       if (passDays.length) {
-        person.data.membership = status
-        const trueDays = passDays.map(d => 'true').join(',')
+        person.data.membership = status;
+        const trueDays = passDays.map(d => 'true').join(',');
         return tx.none(`
           INSERT INTO daypasses (person_id,status,${passDays.join(',')})
                VALUES ($(id),$(membership),${trueDays})`, person.data
-        )
+        );
       }
 
   }}))
@@ -200,7 +200,7 @@ function updatePerson(req, res, next) {
   ]))
     .then(([{ can_hugo_nominate, can_hugo_vote, next_email, prev_email, name }, key]) => {
       email = next_email;
-      if (next_email === prev_email) return {}
+      if (next_email === prev_email) return {};
       updateMailRecipient(db, prev_email);
       return !can_hugo_nominate && !can_hugo_vote ? {}
         : key ? { key: key.key, name }

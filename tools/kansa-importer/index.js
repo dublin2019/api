@@ -152,6 +152,7 @@ function personData(rec) {
     'public_first_name', 'public_last_name',
     'email',
     'city', 'state', 'country',
+    'postcode', 'address',
     'badge_text'
   ].reduce((data, key) => {
     const v = rec[key];

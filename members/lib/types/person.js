@@ -12,6 +12,7 @@ class Person {
       'public_first_name', 'public_last_name',  // text
       'email',  // text
       'city', 'state', 'country',  // text
+      'postcode', 'address',  // text
       'badge_text',  // text
       'can_hugo_nominate', 'can_hugo_vote', 'can_site_select',  // bool NOT NULL DEFAULT false
       'paper_pubs'  // jsonb
@@ -23,11 +24,22 @@ class Person {
   }
 
   static hugoVoterType(membership) {
-    return [ 'Supporter', 'YoungAdult', 'FirstWorldcon', 'Adult' ].indexOf(membership) !== -1
+    return [ 'Supporter', 'YoungAdult', 'FirstWorldcon', 'Adult' ].indexOf(membership) !== -1;
   }
 
   static get userModFields() {
-    return [ 'legal_name', 'public_first_name', 'public_last_name', 'city', 'state', 'country', 'paper_pubs' ];
+    return [
+      'legal_name',
+      'public_first_name',
+      'public_last_name',
+      'city',
+      'state',
+      'country',
+      'postcode',
+      'address',
+      'badge_text',
+      'paper_pubs'
+    ];
   }
 
   static get membershipTypes() {
@@ -64,11 +76,11 @@ class Person {
   }
 
   get hugoVoterType() {
-    return Person.hugoVoterType(this.data.membership)
+    return Person.hugoVoterType(this.data.membership);
   }
 
   get passDays() {
-    return Object.keys(this.data).filter(key => /^day\d+$/.test(key) && this.data[key])
+    return Object.keys(this.data).filter(key => /^day\d+$/.test(key) && this.data[key]);
   }
 
   get preferredName() {
@@ -77,10 +89,10 @@ class Person {
   }
 
   get priceAsNewMember() {
-    const ms = prices.memberships[this.data.membership]
-    const pp = this.data.paper_pubs ? prices.PaperPubs.amount : 0
-    const da = this.data.discount ? this.data.discount.amount : 0
-    return (ms && ms.amount || 0) + pp - da
+    const ms = prices.memberships[this.data.membership];
+    const pp = this.data.paper_pubs ? prices.PaperPubs.amount : 0;
+    const da = this.data.discount ? this.data.discount.amount : 0;
+    return (ms && ms.amount || 0) + pp - da;
   }
 
   get sqlValues() {
