@@ -23,7 +23,7 @@ class Person {
   }
 
   static hugoVoterType(membership) {
-    return [ 'Supporter', 'YoungAdult', 'FirstWorldcon', 'Adult' ].indexOf(membership) !== -1
+    return [ 'Supporter', 'YoungAdult', 'FirstWorldcon', 'Adult' ].indexOf(membership) !== -1;
   }
 
   static get userModFields() {
@@ -64,11 +64,11 @@ class Person {
   }
 
   get hugoVoterType() {
-    return Person.hugoVoterType(this.data.membership)
+    return Person.hugoVoterType(this.data.membership);
   }
 
   get passDays() {
-    return Object.keys(this.data).filter(key => /^day\d+$/.test(key) && this.data[key])
+    return Object.keys(this.data).filter(key => /^day\d+$/.test(key) && this.data[key]);
   }
 
   get preferredName() {
@@ -77,10 +77,10 @@ class Person {
   }
 
   get priceAsNewMember() {
-    const ms = prices.memberships[this.data.membership]
-    const pp = this.data.paper_pubs ? prices.PaperPubs.amount : 0
-    const da = this.data.discount ? this.data.discount.amount : 0
-    return (ms && ms.amount || 0) + pp - da
+    const ms = prices.memberships[this.data.membership];
+    const pp = this.data.paper_pubs ? prices.PaperPubs.amount : 0;
+    const da = this.data.discount ? this.data.discount.amount : 0;
+    return (ms && ms.amount || 0) + pp - da;
   }
 
   get sqlValues() {
