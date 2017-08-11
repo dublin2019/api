@@ -8,13 +8,13 @@
       "amount": 500,
       "description": "TEK First Worldcon"
     },
-    "TEK-Youth": {
+    "TEK-YoungAdult": {
       "amount": 2000,
-      "description": "TEK Youth"
+      "description": "TEK Young Adult"
     },
-    "TEK-Child": {
+    "TEK-Infant": {
       "amount": 3000,
-      "description": "TEK Child"
+      "description": "TEK Infant"
     }
   },
   "memberships": {
@@ -26,17 +26,17 @@
       "amount": 4000,
       "description": "Supporting"
     },
-    "KidInTow": {
+    "Infant": {
       "amount": 500,
-      "description": "Kid-in-tow"
+      "description": "Infant"
     },
     "Child": {
       "amount": 6000,
       "description": "Child"
     },
-    "Youth": {
+    "YoungAdult": {
       "amount": 10000,
-      "description": "Youth"
+      "description": "Young Adult"
     },
     "FirstWorldcon": {
       "amount": 10000,
