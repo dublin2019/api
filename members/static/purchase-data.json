@@ -71,6 +71,18 @@
       "country": {
         "label": "Country",
         "type": "string"
+      },
+      "postcode": {
+        "label": "Postal Code",
+        "type": "string"
+      },
+      "address": {
+        "label": "Address",
+        "type": "string"
+      },
+      "badge_text": {
+        "label": "Badge Name",
+        "type": "string"
       }
     },
     "types": [
@@ -124,6 +136,18 @@
       },
       "country": {
         "label": "Country",
+        "type": "string"
+      },
+      "postcode": {
+        "label": "Postal Code",
+        "type": "string"
+      },
+      "address": {
+        "label": "Address",
+        "type": "string"
+      },
+      "badge_text": {
+        "label": "Badge Name",
         "type": "string"
       },
       "paper_pubs": {
