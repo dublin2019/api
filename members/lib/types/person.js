@@ -12,6 +12,7 @@ class Person {
       'public_first_name', 'public_last_name',  // text
       'email',  // text
       'city', 'state', 'country',  // text
+      'postcode', 'address',  // text
       'badge_text',  // text
       'can_hugo_nominate', 'can_hugo_vote', 'can_site_select',  // bool NOT NULL DEFAULT false
       'paper_pubs'  // jsonb
@@ -27,7 +28,18 @@ class Person {
   }
 
   static get userModFields() {
-    return [ 'legal_name', 'public_first_name', 'public_last_name', 'city', 'state', 'country', 'paper_pubs' ];
+    return [
+      'legal_name',
+      'public_first_name',
+      'public_last_name',
+      'city',
+      'state',
+      'country',
+      'postcode',
+      'address',
+      'badge_text',
+      'paper_pubs'
+    ];
   }
 
   static get membershipTypes() {
