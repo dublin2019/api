@@ -202,7 +202,8 @@ uses `_` for single-character wildcards and `%` for multiple characters.
 ### `POST people`
 - Requires authentication and `member_admin` authority
 - Parameters: `membership`, `legal_name`, `email`, `public_first_name`,
-  `public_last_name`, `city`, `state`, `country`, `paper_pubs`
+  `public_last_name`, `city`, `state`, `country`, `paper_pubs`,
+  `postcode`, `address`, `badge_text`
 
 Add new person. If `membership` is not `'NonMember'`, a new `member_number` will
 be generated.
@@ -228,6 +229,7 @@ data, `member_admin` or `member_list` authority is required.
 {
   id, last_modified, member_number, membership, legal_name, email,
   public_first_name, public_last_name, city, state, country,
+  postcode, address, badge_text,
   can_hugo_nominate, can_hugo_vote, can_site_select,
   paper_pubs: { name, address, country },
   preferred_name, daypass, daypass_days
@@ -254,7 +256,7 @@ match the session data, `member_admin` or `member_list` authority is required.
 - Requires authentication
 - Parameters: `membership` (`member_admin` only), `email` (`member_admin` only),
   `legal_name`, `public_first_name`, `public_last_name`, `city`, `state`,
-  `country`, `paper_pubs`
+  `country`, `postcode`, `address`, `badge_text`, `paper_pubs`
 
 Update the data for the person matching `id`. If its email address does not
 match the session data, `member_admin` authority is required.
