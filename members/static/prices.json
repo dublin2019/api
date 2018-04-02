@@ -19,7 +19,7 @@
   },
   "memberships": {
     "Exhibitor": {
-      "amount": 16000,
+      "amount": 18000,
       "description": "Trader/Displayer"
     },
     "Supporter": {
@@ -31,19 +31,19 @@
       "description": "Infant"
     },
     "Child": {
-      "amount": 6000,
+      "amount": 6500,
       "description": "Child"
     },
     "YoungAdult": {
-      "amount": 10000,
+      "amount": 11000,
       "description": "Young Adult"
     },
     "FirstWorldcon": {
-      "amount": 10000,
+      "amount": 11000,
       "description": "First Worldcon"
     },
     "Adult": {
-      "amount": 16000,
+      "amount": 18000,
       "description": "Adult"
     },
     "Backer": {
