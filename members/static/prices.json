@@ -47,7 +47,7 @@
       "description": "Adult"
     },
     "Backer": {
-      "amount": 500,
+      "amount": 0,
       "description": "Pre-supporter / Backer"
     },
     "Friend": {
