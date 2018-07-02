@@ -322,24 +322,6 @@
     },
     "types": [
       {
-        "key": "family",
-        "amount": 40000,
-        "description": "<p>Here is your balance due for your family plan.</p>",
-        "label": "Family plan balance"
-      },
-      {
-        "key": "instalment",
-        "amount": 3000,
-        "description": "<p>Here is an invoice for your instalment plan. Please pay within twenty days after receipt. Instalment plans that lapse, by missing two payments, will be closed out without membership.</p>",
-        "label": "Membership instalment plan"
-      },
-      {
-        "key": "general",
-        "amount": 5000,
-        "description": "<p>Dublin2019 is sending you an invoice. If you have any questions, please email <a href=\"mailto:finance-dh@dublin2019.com\">finance-dh@dublin2019.com</a>.</p>",
-        "label": "Invoice"
-      },
-      {
         "key": "bench",
         "amount": 6000,
         "description": "<p>Following the deeply ingrained Fannish Tradition of two previous Worldcons, we are offering the opportunity to sponsor benches in the Exhibits Hall. Give weary convention members somewhere to put their feet up when they've spent too long wandering around the halls. Memorialise a friend, advertise your convention, or hide the secret of your success in a coded message.</p><p>Each bench comes with a plaque to hold a message with four lines of text, 20-25 characters per line. After the convention you get to keep the plaque (but not the bench).</p><p>For queries, contact <a href=\"mailto:exhibits@worldcon.fi\">exhibits@worldcon.fi</a>. If your sponsorship is received in time, it will be acknowledged on the Worldcon75 website and in the programme book.</p>",
