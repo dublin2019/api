@@ -31,19 +31,19 @@
       "description": "Infant"
     },
     "Child": {
-      "amount": 6500,
+      "amount": 7000,
       "description": "Child"
     },
     "YoungAdult": {
-      "amount": 11000,
+      "amount": 12000,
       "description": "Young Adult"
     },
     "FirstWorldcon": {
-      "amount": 11000,
+      "amount": 12000,
       "description": "First Worldcon"
     },
     "Adult": {
-      "amount": 18000,
+      "amount": 21000,
       "description": "Adult"
     },
     "Backer": {
@@ -51,7 +51,7 @@
       "description": "Pre-supporter / Backer"
     },
     "Friend": {
-      "amount": 12000,
+      "amount": 0,
       "description": "Friend / Super-Friend"
     },
     "Voter": {
@@ -63,7 +63,7 @@
       "description": "Pre-supporter / Backer who voted for 2019 Site Selection"
     },
     "FriendVoter": {
-      "amount": 16000,
+      "amount": 4000,
       "description": "Friend / Super-Friend who voted for 2019 Site Selection"
     }
   },

@@ -159,19 +159,19 @@
     "types": [
       {
         "key": "Adult",
-        "amount": 16000,
+        "amount": 21000,
         "label": "Adult"
       }, {
         "key": "FirstWorldcon",
-        "amount": 10000,
+        "amount": 12000,
         "label": "First Worldcon"
       }, {
         "key": "YoungAdult",
-        "amount": 10000,
+        "amount": 12000,
         "label": "Young Adult"
       }, {
         "key": "Child",
-        "amount": 6000,
+        "amount": 7000,
         "label": "Child"
       }, {
         "key": "Infant",
@@ -179,11 +179,11 @@
         "label": "Infant"
       }, {
         "key": "Backer",
-        "amount": 500,
+        "amount": 0,
         "label": "Pre-Supporter or Backer"
       }, {
         "key": "Friend",
-        "amount": 12000,
+        "amount": 4000,
         "label": "Friend or SuperFriend"
       }, {
         "key": "Voter",
