@@ -35,11 +35,11 @@
       "description": "Child"
     },
     "YoungAdult": {
-      "amount": 12000,
+      "amount": 13000,
       "description": "Young Adult"
     },
     "FirstWorldcon": {
-      "amount": 12000,
+      "amount": 13000,
       "description": "First Worldcon"
     },
     "Adult": {

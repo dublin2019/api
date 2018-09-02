@@ -163,11 +163,11 @@
         "label": "Adult"
       }, {
         "key": "FirstWorldcon",
-        "amount": 12000,
+        "amount": 13000,
         "label": "First Worldcon"
       }, {
         "key": "YoungAdult",
-        "amount": 12000,
+        "amount": 13000,
         "label": "Young Adult"
       }, {
         "key": "Child",
