@@ -7,12 +7,14 @@ CREATE TABLE Nominations (
     client_ua text,
     person_id integer REFERENCES kansa.People NOT NULL,
     signature text NOT NULL,
+    competition Competition NOT NULL default 'Hugos',
     category Category NOT NULL,
     nominations jsonb[] NOT NULL
 );
 
 CREATE TABLE Finalists (
     id SERIAL PRIMARY KEY,
+    competition Competition NOT NULL default 'Hugos',
     category Category NOT NULL,
     sortindex int,
     title text NOT NULL,
@@ -26,11 +28,13 @@ CREATE TABLE Votes (
     client_ua text,
     person_id integer REFERENCES kansa.People NOT NULL,
     signature text NOT NULL,
+    competition Competition NOT NULL default 'Hugos',
     category Category NOT NULL,
     votes integer[] NOT NULL
 );
 
 CREATE TABLE Packet (
+    competition Competition NOT NULL default 'Hugos',
     category Category NOT NULL,
     filename text NOT NULL,
     filesize integer,
@@ -39,39 +43,41 @@ CREATE TABLE Packet (
 
 CREATE TABLE Canon (
     id SERIAL PRIMARY KEY,
+    competition Competition NOT NULL default 'Hugos',
     category Category NOT NULL,
     nomination jsonb NOT NULL,
     disqualified bool NOT NULL DEFAULT false,
     relocated Category,
-    UNIQUE (category, nomination)
+    UNIQUE (competition, category, nomination)
 );
 
 CREATE TABLE Classification (
+    competition Competition NOT NULL default 'Hugos',
     category Category,
     nomination jsonb,
     canon_id integer REFERENCES Canon,
-    PRIMARY KEY (category, nomination)
+    PRIMARY KEY (competition, category, nomination)
 );
 
 CREATE VIEW CurrentBallots AS SELECT
-    DISTINCT ON (person_id, category)
-    id AS ballot_id, category, nominations
+    DISTINCT ON (person_id, competition, category)
+    id AS ballot_id, category, nominations, competition
     FROM Nominations
-    ORDER BY person_id, category, time DESC;
+    ORDER BY person_id, competition, category, time DESC;
 
 CREATE VIEW CurrentNominations AS SELECT
-    n.ballot_id, n.category, n.nomination, c.canon_id
+    n.ballot_id, n.competition, n.category, n.nomination, c.canon_id
     FROM (
-        SELECT ballot_id, category, unnest(nominations) as nomination
+        SELECT ballot_id, competition, category, unnest(nominations) as nomination
         FROM CurrentBallots
     ) AS n
     NATURAL LEFT OUTER JOIN Classification c;
 
 CREATE VIEW CurrentVotes AS SELECT
-    DISTINCT ON (person_id, category)
-    id, person_id, signature, category, votes
+    DISTINCT ON (person_id, competition, category)
+    id, person_id, signature, competition, category, votes
     FROM Votes
-    ORDER BY person_id, category, time DESC;
+    ORDER BY person_id, competition, category, time DESC;
 
 
 -- allow clients to listen to changes
