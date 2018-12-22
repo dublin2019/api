@@ -54,7 +54,7 @@ INSERT INTO payment_types (category, key, amount, label, sort_index) VALUES
 ('daypass', 'daypass-Adult', null, 'Adult (from €25/day)', 1),
 ('daypass', 'daypass-YoungAdult', null, 'YoungAdult (from €15/day)', 2),
 ('daypass', 'daypass-Child', null, 'Child (from €10/day)', 3),
-('new_member', 'FirstWorldcon', 13000, 'First Worldcon', 1),
+('new_member', 'FirstWorldcon', 13000, 'Residents of the Island of Ireland First Worldcon', 1),
 ('new_member', 'Adult', 21000, 'Adult', 2),
 ('new_member', 'YoungAdult', 13000, 'YoungAdult', 3),
 ('new_member', 'Child', 7000, 'Child', 4),
