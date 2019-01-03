@@ -9,7 +9,7 @@ const PaperPubs = require('./paperpubs');
 const agent = new https.Agent({ rejectUnauthorized: false })
 
 const csvOptions = { columns: true, skip_empty_lines: true };
-const DEFAULT_EMAIL = 'registration@worldcon.fi';
+const DEFAULT_EMAIL = 'registration@dublin2019.com';
 
 const loginUrl = process.argv[2];
 if (loginUrl.indexOf('/login') === -1) {
@@ -102,7 +102,13 @@ function handle(rec, tag) {
   let data, id;
   return new Promise((resolve, reject) => {
     try {
-      data = rec.supporter ? supporterData(rec) : newAttendingData(rec);
+      if (rec.supporter) {
+        data = supporterData(rec);
+      }else if (rec.previous_wc) {
+	data = newPreviousWCData(rec);
+      }else{
+	data =  newAttendingData(rec);
+      }
       resolve(data);
     } catch (e) {
       reject(e);
@@ -178,7 +184,8 @@ function attendingType(type) {
     'upgrade to attending': 'Adult',
     'upgrade to first worldcon': 'FirstWorldcon',
     'upgrade to YA attending': 'YoungAdult',
-    'YoungAdult': 'YoungAdult'
+    'YoungAdult': 'YoungAdult',
+    'W76 (21 November import)': 'HugoNominator'
   }[type.toLowerCase()];
 }
 
@@ -189,6 +196,15 @@ function supporterData(rec) {
   p.voter = rec.supporter.toLowerCase() == 'voter';
   if (rec.supporter_source) p.source = rec.supporter_source;
   if (rec.supporter_comment) p.comment = rec.supporter_comment;
+  return p;
+}
+
+function newPreviousWCData(rec) {
+  const p = personData(rec);
+  p.badge_name = `WC76 ${rec.membership} #${rec.member_number}`;
+  p.comment = p.badge_name;
+  p.membership = 'HugoNominator';
+  p.member_number = null;
   return p;
 }
 
