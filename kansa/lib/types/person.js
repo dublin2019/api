@@ -13,7 +13,8 @@ class Person {
       'email',  // text
       'city', 'state', 'country',  // text
       'postcode', 'address', //text
-      'badge_text',  // text
+      'badge_name',  // text
+      'badge_subtitle',  // text
       'paper_pubs',  // jsonb
       'daypass',  // string
       'daypass_days'  // int[]
@@ -30,7 +31,8 @@ class Person {
 	'country',
 	'postcode',
 	'address',
-	'badge_text', 
+	'badge_name', 
+	'badge_subtitle', 
 	'paper_pubs' 
     ];
   }
