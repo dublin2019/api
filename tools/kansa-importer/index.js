@@ -185,7 +185,8 @@ function attendingType(type) {
     'upgrade to first worldcon': 'FirstWorldcon',
     'upgrade to YA attending': 'YoungAdult',
     'YoungAdult': 'YoungAdult',
-    'W76 (21 November import)': 'HugoNominator'
+    'W76 (21 November import)': 'HugoNominator',
+    'W76 (Data consent form)': 'HugoNominator'
   }[type.toLowerCase()];
 }
 
@@ -195,14 +196,13 @@ function supporterData(rec) {
   p.timestamp = `${rec.supporter_date} UTC`;
   p.voter = rec.supporter.toLowerCase() == 'voter';
   if (rec.supporter_source) p.source = rec.supporter_source;
-  if (rec.supporter_comment) p.comment = rec.supporter_comment;
+  if (rec.supporter_comment) p.content = rec.supporter_comment;
   return p;
 }
 
 function newPreviousWCData(rec) {
   const p = personData(rec);
   p.badge_name = `WC76 ${rec.membership} #${rec.member_number}`;
-  p.comment = p.badge_name;
   p.membership = 'HugoNominator';
   p.member_number = null;
   return p;
