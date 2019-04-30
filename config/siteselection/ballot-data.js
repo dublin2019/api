@@ -3,8 +3,8 @@ function ballotData({ member_number, legal_name, email, city, state, country, ba
   return {
     info: {
       Title: 'Ballot for ' + legal_name,
-      Author: 'Worldcon 77 Site Selection',
-      Creator: 'members.worldcon.fi'
+      Author: 'Worldcon 79 Site Selection',
+      Creator: 'api.dublin2019.com'
     },
     fields: {
       'Name': legal_name,

@@ -31,7 +31,8 @@ class Person {
 	'country',
 	'postcode',
 	'address',
-	'badge_text', 
+	'badge_name', 
+	'badge_subtitle', 
 	'paper_pubs' 
     ];
   }
