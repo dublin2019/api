@@ -1,5 +1,5 @@
 const fs = require('fs')
-const YAML = require('yaml').default
+const YAML = require('yaml')
 
 const src = fs.readFileSync('/kansa.yaml', 'utf8')
 const config = YAML.parse(src)
