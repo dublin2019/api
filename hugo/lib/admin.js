@@ -104,7 +104,7 @@ class Admin {
       tx.one(`
         INSERT INTO Canon (category, nomination)
         VALUES ($(category), $(nomination)::jsonb)
-        ON CONFLICT (category, nomination)
+        ON CONFLICT (competition, category, nomination)
           DO UPDATE SET category = EXCLUDED.category
         RETURNING id`, { category, nomination } // DO UPDATE required for non-empty RETURNING id
       )
@@ -131,7 +131,7 @@ class Admin {
       });
       return `
         ${this.pgp.helpers.insert(values, cs)}
-        ON CONFLICT (category, nomination)
+        ON CONFLICT (competition, category, nomination)
           DO UPDATE SET canon_id = EXCLUDED.canon_id
       `;
     }
